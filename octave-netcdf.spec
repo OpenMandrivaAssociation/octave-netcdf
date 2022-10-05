@@ -2,9 +2,9 @@
 
 Summary:	A MATLAB compatible NetCDF interface for Octave
 Name:		octave-%{octpkg}
-Version:	1.0.14
+Version:	1.0.16
 Release:	1
-Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Sciences/Mathematics
 Url:		https://octave.sourceforge.io/%{octpkg}/
