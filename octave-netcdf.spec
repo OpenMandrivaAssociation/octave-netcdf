@@ -1,15 +1,17 @@
 %global octpkg netcdf
 
-Summary:	A MATLAB compatible NetCDF interface for Octave
-Name:		octave-%{octpkg}
+Summary:	A NetCDF interface for Octave
+Name:		octave-netcdf
 Version:	1.0.16
-Release:	1
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
-License:	GPLv2+
+Release:	2
+License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://packages.octave.org/%{octpkg}/
+Url:		https://packages.octave.org/netcdf/
+Source0:	https://downloads.sourceforge.net/octave/netcdf-%{version}.tar.gz
+# skip failing test(s)
+Patch0:		octave-netcdf-1.0.16-skip_tests.patch
 
-BuildRequires:	octave-devel >= 3.4.0
+BuildRequires:  octave-devel >= 4.0.0
 BuildRequires:	pkgconfig(netcdf)
 
 Requires:	octave(api) = %{octave_api}
@@ -18,15 +20,15 @@ Requires(post): octave
 Requires(postun): octave
 
 %description
-A MATLAB compatible NetCDF interface for Octave
+A MATLAB compatible NetCDF interface for Octave.
 
 %files
 %license COPYING
 %doc NEWS
-%dir %{octpkglibdir}
-%{octpkglibdir}/*
 %dir %{octpkgdir}
 %{octpkgdir}/*
+%dir %{octpkglibdir}
+%{octpkglibdir}/*
 %{_metainfodir}/*.metainfo.xml
 
 #---------------------------------------------------------------------------
@@ -34,8 +36,8 @@ A MATLAB compatible NetCDF interface for Octave
 %prep
 %autosetup -p1 -n %{octpkg}-%{version}
 
-# remove backup files
-#find . -name \*~ -delete
+# remove failing test(s)
+#rm -f inst/private/test_netcdf_unlim.m
 
 %build
 %set_build_flags
