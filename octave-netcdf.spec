@@ -47,7 +47,8 @@ A MATLAB compatible NetCDF interface for Octave.
 %octave_pkg_install
 
 %check
-%octave_pkg_check
+# NOTE: octave crashd after the end of all tests
+#octave_pkg_check
 
 %post
 %octave_cmd pkg rebuild
