@@ -2,8 +2,8 @@
 
 Summary:	A NetCDF interface for Octave
 Name:		octave-netcdf
-Version:	1.0.16
-Release:	2
+Version:	1.0.17
+Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
 Url:		https://packages.octave.org/netcdf/
