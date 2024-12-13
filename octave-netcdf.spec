@@ -2,7 +2,7 @@
 
 Summary:	A NetCDF interface for Octave
 Name:		octave-netcdf
-Version:	1.0.17
+Version:	1.0.18
 Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
